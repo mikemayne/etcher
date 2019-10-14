@@ -1,0 +1,4 @@
+# what the fork? #
+
+- added sunxi-sdimg to the list of supported images
+- added step-by-step build instructions for ubuntu

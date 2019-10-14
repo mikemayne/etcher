@@ -1,21 +1,29 @@
 README.build
 
-clone the repo:
+Build instructions for a c++ developer that doesn't have a clue about javascript.  Tested on Ubuntu.
+
+# clone the repo
 
 $ git clone https://github.com/mikemayne/etcher.git
 
-pull submodules:
+# pull submodules
 
 $ git submodule update --init
 
-install dependencies:
+# install dependencies.  there may be more or less than this, the ci-scripts should tell you what to install/
 
 $ sudo apt install jq build
 
-build:
-
-build as root so npm can update its modules
+# build as root so npm can update its modules
 
 $ sudo npm audit fix
 $ sudo make electron-develop
 
+# for some reason npm requires you to commit some file:
+
+$ git add . && git commit -m 'npm notice created a lockfile as npm-shrinkwrap.json. You should commit this file.'
+$ sudo make electron-develop && sudo make electron-build
+
+# this should build etcher.  You can run it with:
+
+$ dist/linux-unpacked/balena-etcher-electron
