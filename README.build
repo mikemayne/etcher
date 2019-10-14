@@ -1,0 +1,21 @@
+README.build
+
+clone the repo:
+
+$ git clone https://github.com/mikemayne/etcher.git
+
+pull submodules:
+
+$ git submodule update --init
+
+install dependencies:
+
+$ sudo apt install jq build
+
+build:
+
+build as root so npm can update its modules
+
+$ sudo npm audit fix
+$ sudo make electron-develop
+
